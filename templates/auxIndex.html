@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Utltimo Registro
+{% endblock %}
+
+{% block content %}
+    <div class="container w-75  mt-5  ">
+      <div class="row align-items-center">
+        <div class="card">
+          <table class="table table-bordered table-striped" style="width: 80%;">
+            <tbody>
+              {% for key,value in datos.items() %}
+                {% if value!='on'  %}
+                    <tr>
+                    <th style="width: 20%;">
+                        {{key}}
+                    </td>
+                    <td>
+                        {{value}}
+                    </td>
+                    </th>
+                {% endif %}
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+ {% endblock %}

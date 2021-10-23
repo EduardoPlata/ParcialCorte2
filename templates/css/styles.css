@@ -1,0 +1,17 @@
+body {
+  background: #9f8ad0;
+  background-image: linear-gradient(to right, #a18cd1 0%, #fbc2eb 100%);
+}
+.contenedorLog {
+    
+	margin: auto;
+	
+}
+.fondoLog {
+   background-position: center;
+  background-repeat: no-repeat;
+  
+  height: 100%;
+  width: 100%; 
+ 
+}

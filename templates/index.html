@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Registro
+{% endblock %}
+
+{% block content %}
+    <div class="container w-75  mt-5  ">
+      <div class="row align-items-stretch">
+        <!-- <div class="col bg-white d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded"> -->
+        
+        <div class="col bg-white  rounded">
+          
+          <h2 class="fw-bold text-center py-5">Crear nueva base de datos </h2>
+
+          <!-- inicio -->
+          <form action="/guardar" method="POST">
+              
+            <div class="form-group row m-3">
+              <label for="input1" class="col-sm-2 col-form-label">Hostname</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control" id="input1" name="host">
+              </div>
+            </div>
+
+            <div class="form-group row m-3">
+              <label for="input2" class="col-sm-2 col-form-label">Usuario</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control" id="input2" name="user">
+              </div>
+            </div>
+
+            <div class="form-group row m-3">
+              <label for="input3" class="col-sm-2 col-form-label">Contraseña</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control" id="input3" name="contra">
+              </div>
+            </div>
+
+            <div class="form-group row m-3">
+              <label for="input4" class="col-sm-2 col-form-label">Puerto</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control" id="input4" name="port">
+              </div>
+            </div>
+
+            <div class="form-group row m-3">
+              <label for="input5" class="col-sm-2 col-form-label">Base de datos</label>
+              <div class="col-sm-10">
+                <input type="text"  class="form-control" id="nombre" name="nombre">
+              </div>
+            </div>         
+
+            
+            <div class="form-group row m-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Mostrar datos
+                </label>
+              </div>
+            </div>
+
+            <div class="text-center  m-3">
+              <button class="btn btn-primary" type="submit">Conectar</button>
+              <a class="btn btn-secondary" href="/">Volver</a>  
+            </div>
+
+            <body>
+              <h1 style="color:rgb(7, 137, 160)">Parcial 2</h1>
+              <p style="color:rgb(154, 12, 248)">Eduardo Plata</p>
+            </body>
+
+          </form>
+        </div>
+      
+      <!---->
+      <div class="col bg-white  rounded">
+        
+        <table class="table table-bordered table-striped" style="width: 80%;">
+          <h2 class="fw-bold text-center py-5">Bases de datos creadas </h2>
+          <thead>Listado bases de datos</thead>
+          <tbody>
+
+            {% for d in datosDB %}
+                  <tr>
+                  
+                  <td>
+                      {{d.Database}}
+                  </td>
+                  </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+      </div>
+    </div> 
+    </div>
+
+    {% endblock %}
